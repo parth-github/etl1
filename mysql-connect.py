@@ -17,11 +17,14 @@ db_config = {
 try:
     cnx = mysql.connector.connect(**config['mysql'])
     print('Connected Successfully...')
-    cnx.execute('SELECT ')
+
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print('Check credentials')
+
 except Exception as e:
     print(f'Error...{e}')
+
 finally:
     cnx.close()
+    print('Connection closed...')
