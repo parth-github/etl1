@@ -1,0 +1,8 @@
+pandas
+numpy
+mysql-connector-python
+google-cloud
+pyarrow
+pytz
+python-dateutil
+six
