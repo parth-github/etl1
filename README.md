@@ -21,4 +21,7 @@
 7. DB Configuration parameters are enlisted in `.my.cnf` file in local working directory.
 8. `mysql-connect.py` file created to check the DB Connection with configparser module.
 9. `db_queries.py` file is created with SQL Select queries and tested in `mysql-query-check.py`.
-10. 
+
+## References
+
+[IMDB_MOVIES dataset](https://github.com/laxmimerit/All-CSV-ML-Data-Files-Download/blob/master/IMDB-Movie-Data.csv)

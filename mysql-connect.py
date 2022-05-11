@@ -4,17 +4,7 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read('.my.cnf')
-'''
-try:
-    conn = mysql.connector.connect(read_defualt_file='.my.cnf')
-    conn1 = mysql.connector.connect()
-except mysql.connector.Error as err:
-    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-        print('Check credentials')
 
-conn.close()
-
-'''
 '''
 db_config = {
   'user': config['mysql']['user'],
@@ -27,6 +17,11 @@ db_config = {
 try:
     cnx = mysql.connector.connect(**config['mysql'])
     print('Connected Successfully...')
-except:
-    print('Error')
-cnx.close()
+    cnx.execute('SELECT ')
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print('Check credentials')
+except Exception as e:
+    print(f'Error...{e}')
+finally:
+    cnx.close()
